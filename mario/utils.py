@@ -11,4 +11,4 @@ def make_dir(dir_path):
 
 
 def get_current_time():
-    return datetime.utcnow()
+    return datetime.now()

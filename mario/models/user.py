@@ -28,8 +28,8 @@ class User(db.Model, UserMixin, EntityModel):
     name = db.Column(db.String(20), nullable=False, unique=True)
     phone = db.Column(db.Integer, nullable=False, unique=True)
     email = db.Column(db.String(100), unique=True)
-    role = db.Column(db.Integer, nullable=False, default=Role.normal)
-    status = db.Column(db.Integer, nullable=False, default=Status.nonactivated)
+    role = db.Column(db.Integer, nullable=False, default=Role.normal.value)
+    status = db.Column(db.Integer, nullable=False, default=Status.nonactivated.value)
     create_time = db.Column(
             db.DateTime, default=get_current_time, nullable=False)
     update_time = db.Column(

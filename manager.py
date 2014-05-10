@@ -1,4 +1,4 @@
-from flask.ext.script import Manager, Shell
+from flask.ext.script import Manager
 
 from mario.app import create_app
 from mario.libs.extension import db
@@ -20,17 +20,17 @@ def make_shell_context():
 
 
 @manager.command
-def initdb():
+def init_db():
     db.drop_all()
     db.create_all()
 
-    User.add(name='verycb', phone='12345', email='imcaibin@gmail.com')
 
-
-manager.add_option('-c', '--config',
-                   dest='config',
-                   required=False,
-                   help='config file')
+@manager.command
+def init_data():
+    user = User.add(name='verycb', phone='12345', email='imcaibin@gmail.com')
+    password = 'test'
+    user.password = password
+    print 'User %s is added, password is "%s"' % (User, password)
 
 
 if __name__ == '__main__':

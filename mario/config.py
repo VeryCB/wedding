@@ -4,7 +4,7 @@ from mario.utils import make_dir
 
 
 HOST = '127.0.0.1'
-PORT = '3000'
+PORT = '5000'
 
 DEBUG = False
 
