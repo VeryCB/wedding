@@ -4,7 +4,7 @@ from mario.utils import make_dir
 
 
 HOST = '127.0.0.1'
-PORT = '5000'
+PORT = 5000
 
 DEBUG = False
 
@@ -23,7 +23,7 @@ make_dir(UPLOAD_FOLDER)
 
 MAX_CONTENT_LENGTH = 16 * 1024 * 1024
 
-PROJECT_URL = 'http://%s' % ':'.join([HOST, PORT])
+PROJECT_URL = 'http://%s' % ':'.join([HOST, str(PORT)])
 
 SQLALCHEMY_DATABASE_URI = 'mysql://username:password@server/db'
 
