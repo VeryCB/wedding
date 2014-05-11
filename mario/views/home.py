@@ -55,7 +55,7 @@ def index():
         next_ = request.args.get('next') or url_for('.index')
         return redirect(next_)
 
-    return render_template('home/login.html', form=form, user=current_user)
+    return render_template('home/login.html', form=form)
 
 
 @bp.route('logout/')
