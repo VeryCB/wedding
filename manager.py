@@ -1,6 +1,6 @@
 from flask.ext.script import Manager
 
-from mario.config import HOST, PORT
+from mario.config import HOST, PORT, DEBUG
 from mario.app import create_app
 from mario.libs.extension import db
 from mario.models.user import User
@@ -12,7 +12,7 @@ manager = Manager(app)
 
 @manager.command
 def run():
-    app.run(host=HOST, port=PORT)
+    app.run(host=HOST, port=PORT, debug=DEBUG)
 
 
 @manager.shell

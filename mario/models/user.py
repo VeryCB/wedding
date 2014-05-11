@@ -4,7 +4,8 @@ from enum import Enum
 
 from mario.libs.extension import db, UserMixin
 from mario.utils import get_current_time
-from .base import EntityModel
+from mario.models.base import EntityModel
+from mario.models.consts import RESERVED_USER_NAMES
 
 
 class Role(Enum):
@@ -26,7 +27,8 @@ class User(db.Model, UserMixin, EntityModel):
 
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(20), nullable=False, unique=True)
-    phone = db.Column(db.Integer, nullable=False, unique=True)
+    uid = db.Column(db.String(20), unique=True)
+    phone = db.Column(db.Integer, unique=True)
     email = db.Column(db.String(100), unique=True)
     role = db.Column(db.Integer, nullable=False, default=Role.normal.value)
     status = db.Column(db.Integer, nullable=False, default=Status.nonactivated.value)
@@ -50,29 +52,39 @@ class User(db.Model, UserMixin, EntityModel):
         return cls.query.get(user_id)
 
     @classmethod
-    def get_by_name(cls, name):
-        return cls.query.filter_by(name=name).first()
+    def _check_fields(self, **kwargs):
+        name = kwargs.get('name')
+        uid = kwargs.get('uid')
 
-    @classmethod
-    def get_by_phone(cls, phone):
-        return cls.query.filter_by(phone=phone).first()
+        if uid and not uid[0].isalpha():
+            raise ValueError('uid:%s should start with alphabet' % uid)
+
+        if name and name.lower() in RESERVED_USER_NAMES:
+            raise ValueError('name:%s is reserved' % name)
 
     def update(self, **kwargs):
+        self._check_fields(**kwargs)
+
         self.query.filter_by(id=self.id).update(kwargs)
         db.session.commit()
 
     @classmethod
     def add(cls, **kwargs):
+        cls._check_fields(**kwargs)
+
         instance = cls(**kwargs)
         db.session.add(instance)
         db.session.commit()
         return instance
 
+    def is_active(self):
+        return self.status == Status.normal.value
+
 
 class UserPassword(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, nullable=False)
+    user_id = db.Column(db.Integer, nullable=False, index=True)
     password = db.Column(db.String(80), nullable=False)
     create_time = db.Column(
             db.DateTime, default=get_current_time, nullable=False)
@@ -89,7 +101,10 @@ class UserPassword(db.Model):
     @classmethod
     def get_latest_password(cls, user_id):
         query = cls.query.filter_by(user_id=user_id).order_by(cls.id.desc())
-        return query.first()
+        instance = query.first()
+
+        if instance:
+            return instance.password
 
     @classmethod
     def encrypt(cls, password):

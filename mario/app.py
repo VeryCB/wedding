@@ -1,12 +1,13 @@
 from flask import Flask, render_template
 
-from mario.models.user import User
 from mario.libs.extension import db, login_manager
+from mario.models.user import User
+from mario.views import home
 
 
 __all__ = ['create_app']
 
-BLUEPRINTS = []
+BLUEPRINTS = [home.bp]
 
 
 def create_app():

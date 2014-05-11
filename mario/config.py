@@ -8,7 +8,7 @@ PORT = 5000
 
 DEBUG = False
 
-SECRET_KEY = 'JIn398/3yX R~XHH!328jl]LW0X/,?2*(T'
+SECRET_KEY = 'JIn394/3yX R~XHH!328jl]LW0X/,?2*(T'
 
 make_dir('tmp')
 
