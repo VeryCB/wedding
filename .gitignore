@@ -45,3 +45,5 @@ gunicorn.pid
 
 tmp
 /node_modules
+/mario/static/css
+/mario/static/js
