@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>登录</title>
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
     <form method="post">
         {{ form.hidden_tag() }}
         {{ form.email.label }}: {{ form.email() }}
@@ -18,5 +16,4 @@
         {{ form.password.label }}: {{ form.password() }}
         <input type="submit" value="登录" />
     </form>
-</body>
-</html>
+{% endblock %}

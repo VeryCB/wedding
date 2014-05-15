@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    {% block head %}
+    <title>{% block title %}{% endblock %} - Project Mario</title>
+    {% endblock %}
+
+</head>
+<body>
+    <div id="wrapper">
+        <div id="content">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </div>
+    <footer>
+        {% block footer %}
+        I am a footer.
+        {% endblock %}
+    </footer>
+</body>
+</html>

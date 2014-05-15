@@ -1,6 +1,12 @@
-<h1>Forbidden Page <span>:(</span></h1>
-<p>You shall NOT pass!</p>
-<p>It looks like this was the result of either:</p>
-<ul>
-    <li>no permission</li>
-</ul>
+{% extends "base.html" %}
+
+{% block title %}Forbidden{% endblock %}
+
+{% block content %}
+    <h1>Forbidden Page <span>:(</span></h1>
+    <p>You shall NOT pass!</p>
+    <p>It looks like this was the result of either:</p>
+    <ul>
+        <li>no permission</li>
+    </ul>
+{% endblock %}
