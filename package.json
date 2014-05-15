@@ -1,0 +1,21 @@
+{
+  "name": "mario",
+  "version": "0.0.0",
+  "description": "a portly plumber lives in the Mushroom Kingdom",
+  "main": "index.js",
+  "dependencies": {
+    "gulp": "~3.6.2"
+  },
+  "devDependencies": {
+    "gulp": "~3.6.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://VeryCB@bitbucket.org/wanjia/mario.git"
+  },
+  "author": "",
+  "license": "ISC"
+}
