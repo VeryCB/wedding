@@ -1,3 +1,5 @@
+# coding:utf-8
+
 from flask.ext.script import Manager
 
 from mario.config import HOST, PORT, DEBUG
@@ -28,10 +30,8 @@ def init_db():
 
 @manager.command
 def init_data():
-    user = User.add(name='verycb', phone='12345', email='imcaibin@gmail.com')
-    password = 'test'
-    user.password = password
-    print 'User %s is added, password is "%s"' % (User, password)
+    user = User.add(name=u'喜碧', display_name='CB')
+    print 'User {0} is added'.format(user)
 
 
 if __name__ == '__main__':

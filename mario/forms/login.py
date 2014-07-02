@@ -1,19 +1,15 @@
 # coding: utf-8
 
 from flask.ext.wtf import Form
-from wtforms import TextField, PasswordField, validators
+from wtforms import TextField, validators
 
-from mario.models.user import User, UserPassword
+from mario.models.user import User
 
 
 class LoginForm(Form):
 
-    email = TextField(u'邮箱', [
-        validators.Required(u'不填邮箱可不能登录哦~'),
-        validators.Email(u'Oops, 看起来你填的并不是合法的电子邮箱地址呢~'),
-    ])
-    password = PasswordField(u'密码', [
-        validators.required(u'大概没有人会设一个空密码吧~'),
+    name = TextField(u'姓名', [
+        validators.Required(u'不告诉我你叫什么可不能随便看~'),
     ])
 
     def __init__(self, *args, **kwargs):
@@ -25,17 +21,12 @@ class LoginForm(Form):
         if not rv:
             return False
 
-        email = self.email.data.encode('utf-8')
-        password = self.password.data.encode('utf-8')
+        name = self.name.data
 
-        user = User.query.filter_by(email=email).first()
+        user = User.query.filter_by(name=name).first()
 
         if not user:
-            self.email.errors.append(u'这个邮箱还没有被注册哦~')
-            return False
-
-        if not UserPassword.validate(user.id, password):
-            self.password.errors.append(u'密码没有输对呢~再试试看？')
+            self.name.errors.append(u'暂时还没有您的请帖呢~')
             return False
 
         self.user = user
