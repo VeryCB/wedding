@@ -9,7 +9,7 @@ from mario.models.user import User
 class LoginForm(Form):
 
     name = TextField(u'姓名', [
-        validators.Required(u'不告诉我你叫什么可不能随便看~'),
+        validators.Required(u'不告诉我你叫什么可不能随便看哦~'),
     ])
 
     def __init__(self, *args, **kwargs):
@@ -26,7 +26,7 @@ class LoginForm(Form):
         user = User.query.filter_by(name=name).first()
 
         if not user:
-            self.name.errors.append(u'暂时还没有您的请帖呢~')
+            self.name.errors.append(u'暂时还没有您的邀请函呢~')
             return False
 
         self.user = user

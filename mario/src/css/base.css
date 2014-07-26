@@ -1,4 +1,10 @@
-html, body {
+html, body, input, ul {
     margin: 0;
     padding: 0;
+    border: none;
+    font: 400 18px/1.62 Georgia,"Xin Gothic","Hiragino Sans GB","WenQuanYi Micro Hei","Microsoft YaHei",sans-serif;
+}
+
+ul, li {
+    list-style: none;
 }

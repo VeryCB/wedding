@@ -1,18 +1,22 @@
 {% extends "base.html" %}
 
+{% block head %}
+<link rel="stylesheet" href="/static/css/login.css" />
+{% endblock %}
+
 {% block title %}蔡斌和吴丽丽的婚礼邀请{% endblock %}
 
 {% block content %}
-    <form method="post">
+    <form class="login-form" method="post">
         {{ form.hidden_tag() }}
-        {{ form.name.label }}: {{ form.name() }}
-        {% if form.name.errors %}
-        <ul class="errors">
-            {% for error in form.name.errors %}
-            <li>{{ error }}</li>
-            {% endfor %}
-        </ul>
-        {% endif %}
-        <input type="submit" value="登录" />
+        {{ form.name(class='login-field login-name', placeholder='请输入您的姓名', autocomplete='off', autofocus='autofocus') }}
+        <input class="login-field submit" type="submit" value="查看邀请函" />
     </form>
+    {% if form.name.errors %}
+    <ul class="errors">
+        {% for error in form.name.errors %}
+        <li>{{ error }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
 {% endblock %}
