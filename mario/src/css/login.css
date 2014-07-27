@@ -1,7 +1,8 @@
 #content {
     width: 100%;
     height: 730px;
-    background: url('http://ww4.sinaimg.cn/large/620603d0jw1eiqor3kp8nj20zk0ka77p.jpg') no-repeat;
+    background-image: url('http://ww4.sinaimg.cn/large/620603d0jw1eiqor3kp8nj20zk0ka77p.jpg');
+    background-size: cover;
 }
 
 .login-form {
@@ -48,4 +49,23 @@
     color: #c09853;
     padding: 10px 0;
     margin: 0;
+}
+
+@media only screen and (max-device-width: 480px), only screen and (min-device-width: 560px) and (max-device-width: 1136px) and (-webkit-min-device-pixel-ratio: 2) {
+    /* iPhone only */
+    #content {
+        background-image: url('http://ww2.sinaimg.cn/large/620603d0jw1eir5vbisx8j20dc0kaabc.jpg');
+        background-size: cover;
+        height: 568px;
+    }
+    .login-form {
+        padding-top: 200px;
+        width: 250px;
+    }
+    .login-field {
+        width: 250px;
+    }
+    .login-name {
+        width: 240px;
+    }
 }
