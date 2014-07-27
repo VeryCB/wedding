@@ -14,3 +14,5 @@ gulp.task('minify', function() {
 gulp.task('watch', function () {
     gulp.watch(cssFiles, [minify]);
 });
+
+gulp.task('default', ['minify']);
