@@ -18,11 +18,17 @@ from mario.forms import  LoginForm
 bp = Blueprint('home', __name__, url_prefix='/')
 
 
-@bp.route('/', methods=['GET', 'POST'])
-@bp.route('login/', methods=['GET', 'POST'])
+@bp.route('/', methods=['GET'])
 def index():
     if current_user.is_authenticated():
         return render_template('home/index.html', user=current_user)
+    return redirect(url_for('.login'))
+
+
+@bp.route('login/', methods=['GET', 'POST'])
+def login():
+    if current_user.is_authenticated():
+        return redirect(url_for('.index'))
 
     form = LoginForm()
 
