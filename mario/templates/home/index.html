@@ -7,19 +7,23 @@
 {% endblock %}
 
 {% block content %}
-<div id="bg"></div>
+<div class="bg normal-bg"></div>
+<div class="bg blur-bg"></div>
 
 <article>
-    <nav>
-        <ul>
-            <li>
-                <a href="#intro">B&L</a>
-            </li>
-        </ul>
-    </nav>
-
     <section id="intro">
-    蔡斌 & 吴丽丽
+    Bin & Lili
     </section>
 </article>
+{% endblock %}
+
+{% block js %}
+<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+<script type="text/javascript">
+    $(window).scroll(function() {
+        var height = $(window).height();
+        var oVal = 1 - ($(window).scrollTop() / height);
+        $('.blur-bg').css('opacity', oVal);
+    });
+</script>
 {% endblock %}

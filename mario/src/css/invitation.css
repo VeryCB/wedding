@@ -1,10 +1,20 @@
-#bg {
+.bg {
     position: fixed;
     top: 0;
     width: 100%;
     height: 100%;
-    background-image: url('http://ww2.sinaimg.cn/large/620603d0jw1eisxl4h59pj20zk0kawo7.jpg');
     background-size: cover;
+}
+
+.normal-bg {
+    background-image: url('http://ww2.sinaimg.cn/large/620603d0jw1eiv9lkkh6uj20zk0kawok.jpg');
+}
+
+.blur-bg {
+    background-image: url('http://ww4.sinaimg.cn/large/620603d0jw1eiqor3kp8nj20zk0ka77p.jpg');
+}
+
+#bg-blur {
 }
 
 article {
@@ -12,11 +22,10 @@ article {
     width: 100%;
 }
 
-section {
-    width: 70%;
-    margin: 0 auto;
-}
-
 #intro {
     text-align: center;
+    color: #fff;
+    font-size: 60px;
+    width: 100%;
+    height: 730px;
 }
