@@ -432,3 +432,7 @@ html {
 input {
     border: none;
 }
+
+p {
+    margin: 0;
+}
