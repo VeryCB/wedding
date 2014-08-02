@@ -27,6 +27,8 @@ PROJECT_URL = 'http://%s' % ':'.join([HOST, str(PORT)])
 
 SQLALCHEMY_DATABASE_URI = 'mysql://username:password@server/db'
 
+USERS = []
+
 
 try:
     from mario.local_config import *

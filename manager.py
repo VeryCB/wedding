@@ -2,7 +2,7 @@
 
 from flask.ext.script import Manager
 
-from mario.config import HOST, PORT, DEBUG
+from mario.config import HOST, PORT, DEBUG, USERS
 from mario.app import create_app
 from mario.libs.extension import db
 from mario.models.user import User
@@ -30,8 +30,9 @@ def init_db():
 
 @manager.command
 def init_data():
-    user = User.add(name='CB', display_name=u'喜碧', count=2)
-    print 'User {0} is added'.format(user)
+    for name, display_name, count in USERS:
+        user = User.add(name=name, display_name=display_name, count=count)
+        print 'User {0} is added'.format(user)
 
 
 if __name__ == '__main__':
