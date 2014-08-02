@@ -106,6 +106,22 @@ section {
 }
 
 
+@media only screen and (min-device-height: 801px) {
+    section {
+        margin-top: 300px;
+    }
+    #intro {
+        margin-top: 350px;
+    }
+    #intro .info {
+        width: 30%;
+        margin-top: 200px;
+    }
+    #intro .scroll-down {
+        margin-top: 250px;
+    }
+}
+
 @media only screen and (max-device-width: 480px), only screen and (min-device-width: 560px) and (max-device-width: 1136px) and (-webkit-min-device-pixel-ratio: 2) {
     .blur-bg {
         background-image: url('http://ww2.sinaimg.cn/large/620603d0jw1eiyfkhfcubj20dc0ka75k.jpg');
