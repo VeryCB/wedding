@@ -9,8 +9,7 @@ class User(db.Model, UserMixin, EntityModel):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(20, collation='utf8_bin'),
                      nullable=False, unique=True)
-    display_name = db.Column(db.String(20, collation='utf8_bin'),
-                             unique=True)
+    display_name = db.Column(db.String(20, collation='utf8_bin'))
     count = db.Column(db.Integer)
 
     __table_args__ = {'mysql_engine': 'InnoDB'}
