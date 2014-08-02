@@ -1,3 +1,5 @@
+# coding: utf-8
+
 from flask import (
     Blueprint,
     render_template,
@@ -21,7 +23,8 @@ bp = Blueprint('home', __name__, url_prefix='/')
 @bp.route('/', methods=['GET'])
 def index():
     if current_user.is_authenticated():
-        return render_template('home/index.html', user=current_user)
+        you = u'你'
+        return render_template('home/index.html', user=current_user, you=you)
     return redirect(url_for('.login'))
 
 

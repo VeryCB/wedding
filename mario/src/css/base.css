@@ -463,3 +463,7 @@ p {
 .glyphicon-map-marker:before {
     content: "\e062";
 }
+
+.glyphicon-chevron-down:before {
+  content: "\e114";
+}
