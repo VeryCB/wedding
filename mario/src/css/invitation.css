@@ -27,7 +27,6 @@ section {
     width: 50%;
     background: rgba(0, 0, 0, 0.3);
     padding: 30px;
-    border-radius: 10px;
     color: #fff;
 }
 
@@ -49,9 +48,12 @@ section {
 }
 
 #intro .info {
-    margin-top: 100px;
-    font-size: 26px;
-    color: #ff7676;
+    margin: 100px auto 0;
+    padding: 20px 0;
+    font-size: 24px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.3);
+    width: 60%;
 }
 
 #intro .info .info-item {
@@ -60,7 +62,7 @@ section {
 
 #intro .scroll-down {
     font-size: 24px;
-    margin-top: 150px;
+    margin-top: 100px;
 }
 
 #invitation {
@@ -101,4 +103,91 @@ section {
 
 .location-link a:hover {
     color: #ff7676;
+}
+
+
+@media only screen and (max-device-width: 480px), only screen and (min-device-width: 560px) and (max-device-width: 1136px) and (-webkit-min-device-pixel-ratio: 2) {
+    .blur-bg {
+        background-image: url('http://ww2.sinaimg.cn/large/620603d0jw1eiyfkhfcubj20dc0ka75k.jpg');
+    }
+
+    .normal-bg {
+        background-image: url('http://ww4.sinaimg.cn/large/620603d0jw1eiyfmxhg35j20dc0kan19.jpg');
+    }
+
+    section {
+        margin: 0 auto 30px;
+        width: 80%;
+        padding: 5px 10px;
+    }
+
+    #intro {
+        margin-top: 120px;
+        font-size: 24px;
+     }
+    #intro .us {
+        font-size: 64px;
+    }
+    #intro .info {
+        margin-top: 80px;
+        font-size: 18px;
+        width: 80%;
+    }
+    #intro .info .info-item {
+        display: block;
+        margin-bottom: 20px;
+    }
+    #intro .info .location {
+        margin-bottom: 0;
+    }
+    #intro .scroll-down {
+        margin-top: 30px;
+    }
+
+    #invitation {
+        font: 400 14px/1.62 "Georgia", "Xin Gothic", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei", sans-serif;
+        margin-bottom: 100px;
+    }
+    .invitation-content {
+        margin: 10px 0;
+    }
+
+    #location {
+        margin-bottom: 70px;
+    }
+    #location #map-content {
+        height: 300px;
+    }
+    #location h3 {
+        margin: 0 0 5px 0;
+    }
+    .location-link {
+        margin-top: 10px;
+        font: 400 14px/1.62 "Georgia", "Xin Gothic", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei", sans-serif;
+    }
+}
+
+@media only screen and (min-device-width: 600px) and (max-device-width: 768px) and (-webkit-device-pixel-ratio: 1) and (orientation: portrait) {
+    .blur-bg {
+        background-image: url('http://ww2.sinaimg.cn/large/620603d0jw1eiyhxkxqvij20lc0sg774.jpg');
+    }
+
+    .normal-bg {
+        background-image: url('http://ww1.sinaimg.cn/large/620603d0jw1eiyhz5xwtwj20lc0sgahz.jpg');
+    }
+
+    section {
+        width: 80%;
+    }
+
+    #intro .info {
+        margin-top: 150px;
+    }
+    #intro .info .info-item {
+        display: block;
+        margin-bottom: 20px;
+    }
+    #intro .info .location {
+        margin-bottom: 0;
+    }
 }

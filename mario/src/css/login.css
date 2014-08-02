@@ -63,7 +63,7 @@
 @media only screen and (max-device-width: 480px), only screen and (min-device-width: 560px) and (max-device-width: 1136px) and (-webkit-min-device-pixel-ratio: 2) {
     /* iPhone only */
     #content {
-        background-image: url('http://ww2.sinaimg.cn/large/620603d0jw1eir5vbisx8j20dc0kaabc.jpg');
+        background-image: url('http://ww2.sinaimg.cn/large/620603d0jw1eiyfkhfcubj20dc0ka75k.jpg');
         background-size: cover;
         height: 568px;
     }
@@ -81,7 +81,7 @@
 
 @media only screen and (min-device-width: 600px) and (max-device-width: 768px) and (-webkit-device-pixel-ratio: 1) and (orientation: portrait) {
     #content {
-        background-image: url('http://ww1.sinaimg.cn/large/620603d0jw1eir8uxka8aj20lc0sg41c.jpg');
+        background-image: url('http://ww2.sinaimg.cn/large/620603d0jw1eiyhxkxqvij20lc0sg774.jpg');
         height: 1024px;
     }
 }
