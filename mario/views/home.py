@@ -23,7 +23,7 @@ bp = Blueprint('home', __name__, url_prefix='/')
 @bp.route('/', methods=['GET'])
 def index():
     if current_user.is_authenticated():
-        you = u'你'
+        you = u'你们' if current_user > 1 else u'你'
         return render_template('home/index.html', user=current_user, you=you)
     return redirect(url_for('.login'))
 

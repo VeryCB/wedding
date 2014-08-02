@@ -11,6 +11,7 @@ class User(db.Model, UserMixin, EntityModel):
                      nullable=False, unique=True)
     display_name = db.Column(db.String(20, collation='utf8_bin'),
                              unique=True)
+    count = db.Column(db.Integer)
 
     __table_args__ = {'mysql_engine': 'InnoDB'}
 

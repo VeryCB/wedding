@@ -30,7 +30,7 @@ def init_db():
 
 @manager.command
 def init_data():
-    user = User.add(name=u'喜碧', display_name='CB')
+    user = User.add(name='CB', display_name=u'喜碧', count=2)
     print 'User {0} is added'.format(user)
 
 
