@@ -467,3 +467,7 @@ p {
 .glyphicon-chevron-down:before {
   content: "\e114";
 }
+
+.weixin-img {
+    display: none;
+}
