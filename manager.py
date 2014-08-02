@@ -1,6 +1,7 @@
 # coding:utf-8
 
 from flask.ext.script import Manager
+from sqlalchemy.exc import IntegrityError
 
 from mario.config import HOST, PORT, DEBUG, USERS
 from mario.app import create_app
@@ -31,7 +32,10 @@ def init_db():
 @manager.command
 def init_data():
     for name, display_name, count in USERS:
-        user = User.add(name=name, display_name=display_name, count=count)
+        try:
+            user = User.add(name=name, display_name=display_name, count=count)
+        except IntegrityError:
+            continue
         print 'User {0} is added'.format(user)
 
 
